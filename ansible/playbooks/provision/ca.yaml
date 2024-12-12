@@ -1,0 +1,9 @@
+---
+- name: Configure Certificate Authority
+  hosts: ca
+  become: true
+  tasks:
+    - debug:
+        var: hostvars
+  # roles:
+  #   - step_ca

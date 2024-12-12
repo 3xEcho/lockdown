@@ -1,0 +1,10 @@
+---
+- name: Configure PVE
+  hosts: pve
+  become: true
+  gather_facts: false
+  tasks:
+    - shell:
+        cmd: whoami
+  # roles:
+  #   - step_cli
