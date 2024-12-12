@@ -1,0 +1,9 @@
+---
+- name: Configure DNS Services
+  hosts: dns
+  become: true
+  tasks:
+    - debug:  
+        var: hostvars
+  # roles:
+  #   - step_cli
