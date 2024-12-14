@@ -1,9 +1,14 @@
 ---
-- name: Configure DNS Services
-  hosts: dns
-  become: true
-  tasks:
-    - debug:  
-        var: hostvars
-  # roles:
-  #   - step_cli
+- name: Provision VM
+  hosts: pve
+  vars:
+    - pvevm_name: dns
+  roles:
+    - role: pve_vm
+
+- name: Configure VM
+  hosts: ca
+  roles:
+    - role: common
+    - role: step_cli
+        

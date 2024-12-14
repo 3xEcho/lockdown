@@ -1,9 +1,15 @@
 ---
-- name: Configure Certificate Authority
+- name: Provision VM
+  hosts: pve
+  vars:
+    - pvevm_name: ca
+  roles:
+    - role: pve_vm
+
+- name: Configure VM
   hosts: ca
-  become: true
-  tasks:
-    - debug:
-        var: hostvars
-  # roles:
-  #   - step_ca
+  roles:
+    - role: common
+    - role: step_ca
+    - role: step_cli
+        

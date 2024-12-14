@@ -1,0 +1,4 @@
+---
+# defaults file for roles/pve_vm
+pvevm_name: 
+pvevm_reprovision: false

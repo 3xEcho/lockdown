@@ -1,0 +1,4 @@
+---
+# tasks file for roles/pve_vm
+- debug:
+    msg: hello world
